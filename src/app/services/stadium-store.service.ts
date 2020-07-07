@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Stadium } from '../interfaces/stadium.interface';
 import { StadiumService } from './stadium.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,12 @@ export class StadiumStoreService {
   setStadiums(stadiums: Stadium[]): void{
     this.stadiums = [...this.stadiums,...stadiums]
     
+  }
+
+  byObjectId(OBJECTID:Number){
+    return this.stadiums$.pipe(
+      map(stadiums => stadiums.filter(s => s.OBJECTID === OBJECTID))
+    )
   }
 }
 
