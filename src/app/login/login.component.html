@@ -1,20 +1,23 @@
-<p>login works!</p>
+<h2 class="text-center">Welcome to Stadium Info</h2>
+<h4 class="text-center">Please login:</h4>
 
-
-<!-- <mat-form-field appearance="fill">
+<div style="width: 60%; margin: auto;">
+<form class="login-form" (ngSubmit)="login()" [formGroup]="loginForm">
+<mat-form-field style="display: block;" appearance="fill">
     <mat-label>Username</mat-label>
-        <label for="username">Username</label>
-    <input [(ngModel)]="username" id="username" placeholder="username">
+        <!-- <label for="username">Username</label> -->
+    <input matInput formControlName="username" id="username" placeholder="Username">
 
 </mat-form-field>
 
-<mat-form-field appearance="fill">
+<mat-form-field style="display: block;" appearance="fill">
     <mat-label>Password</mat-label>
-    <label for="password">Password</label>
-    <input [(ngModel)]="password" type="password" id="password" placeholder="password">
-    <input matInput [type]="hide ? 'password' : 'text'">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-</mat-form-field> -->
+    <!-- <label for="password">Password</label> -->
+    <input matInput formControlName="password" type="password" id="password" placeholder="Password" >
+
+</mat-form-field>
+
+<button style="display: block; margin: auto;" mat-raised-button color="primary" (click)='login()' >Submit</button>
+</form>
+</div>
+<!-- <app-display></app-display> -->

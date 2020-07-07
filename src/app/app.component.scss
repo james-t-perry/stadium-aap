@@ -1,0 +1,13 @@
+$primary: rgb(43, 129, 67);
+$secondary: rgba(150,87,60,0.8),;
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.bg-primary{
+  color: $primary;
+  background-color:$secondary;
+}
+

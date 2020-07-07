@@ -31,7 +31,7 @@ export class StadiumStoreService {
 
   byObjectId(OBJECTID:Number){
     return this.stadiums$.pipe(
-      map(stadiums => stadiums.filter(s => s.OBJECTID === OBJECTID))
+      map(stadiums => stadiums.filter(s => s.OBJECTID == OBJECTID))
     )
   }
 }

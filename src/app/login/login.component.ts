@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { StadiumService } from '../services/stadium.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,21 +9,21 @@ import { StadiumService } from '../services/stadium.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  username: string;
-  password: string;
+  loginForm: FormGroup
   
-  constructor(private userService: UserService, private stadiumService: StadiumService) { }
+  constructor(private userService: UserService, private fb: FormBuilder) { }
   
   login(){
-    this.userService.login(this.username, this.password);
+    if(this.loginForm.valid){
+      this.userService.login(this.loginForm.value.username, this.loginForm.value.password)
+    };
   }
   
   ngOnInit(): void {
-    this.stadiumService.pullStadiums();
-    ;
-    
-    
+    this.loginForm = this.fb.group({
+      username: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
+    });
   }
 
 }

@@ -8,7 +8,7 @@ import { DisplayComponent } from './display/display.component';
 import { UserComponent } from './user/user.component';
 import { MaterialModule } from './materialModule';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsComponent } from './details/details.component'
 
@@ -26,7 +26,8 @@ import { DetailsComponent } from './details/details.component'
     FormsModule,
     MaterialModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

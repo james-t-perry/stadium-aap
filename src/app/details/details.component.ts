@@ -11,10 +11,11 @@ import { Stadium } from '../interfaces/stadium.interface';
 export class DetailsComponent implements OnInit {
 stadium: Stadium
   constructor(private actr: ActivatedRoute, private storeService:StadiumStoreService) {
-    storeService.byObjectId(this.actr.snapshot.params.details).subscribe(val => this.stadium = val[0])
    }
 
   ngOnInit(): void {
+    this.storeService.byObjectId(this.actr.snapshot.params.detail).subscribe(val => this.stadium = val[0])
+
   }
 
 }

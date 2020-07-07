@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Observable } from 'rxjs';
 import { StadiumStoreService } from '../services/stadium-store.service';
+import { StadiumService } from '../services/stadium.service';
 
 @Component({
   selector: 'app-display',
@@ -20,7 +21,7 @@ export class DisplayComponent implements OnInit {
   // @Input() stadiums: Observable<Array<Stadium>>;
   // @Input() isUserPage: boolean;
   // @Output() deleteEvent = new EventEmitter<number>()
-  constructor(private storeService: StadiumStoreService) { }
+  constructor(private storeService: StadiumStoreService, private stadiumService: StadiumService) { }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -33,6 +34,7 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.stadiumService.pullStadiums();
 
     this.storeService.stadiums$ .subscribe(val => {
       this.dataSource = new MatTableDataSource(val);

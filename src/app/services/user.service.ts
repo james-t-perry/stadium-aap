@@ -15,9 +15,11 @@ export class UserService {
   login(username: string, password: string): void {
     if (username && password) {
       localStorage.setItem('username', username);
-      this.router.navigate([`/user/${username}`]);
+      localStorage.setItem('password', password)
+      this.router.navigate([`/home/`]);
     }
   }
+  
 
   get user(): string {
     return localStorage.getItem('username');
