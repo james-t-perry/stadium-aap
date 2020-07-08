@@ -16,6 +16,7 @@ export class DisplayComponent implements OnInit {
   displayedColumns: string[] = ['USE_POP', 'TEAM','LEAGUE', 'DIVISION', 'ROOF_TYPE'];
   dataSource: MatTableDataSource<Stadium>;
 
+
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   // @Input() stadiums: Observable<Array<Stadium>>;
@@ -33,9 +34,6 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.stadiumService.pullStadiums();
-
     this.storeService.stadiums$ .subscribe(val => {
       this.dataSource = new MatTableDataSource(val);
       this.dataSource.paginator = this.paginator;

@@ -1,3 +1,47 @@
-<p>user works!</p>
 
-<h2>Welcome, {{username}}</h2>
+
+<h2 class="text-center">Welcome, {{user$ | async}}</h2>
+ <!-- <div>
+<form >
+    <mat-form-field appearance="fill">
+        <mat-label >Username</mat-label>
+        <input matInput [(ngModel)]='user.username'>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label [(ngModel)]='user.firstName'>First Name</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label [(ngModel)]='user.lastName'>Last Name</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label [(ngModel)]='user.email'>Email</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label [(ngModel)]='user.favTeam'>Favorite Team</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone number</mat-label>
+        <example-tel-input required [(ngModel)]="user.phone"></example-tel-input>
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Include area code</mat-hint>
+      </mat-form-field>
+
+</form>
+
+<div>
+    USER INFO DISPLAY?
+</div>
+</div> -->
+
+
+<button class="centerBlock" mat-raised-button color="primary" routerLink="/home">Return To All
+    Stadiums</button>

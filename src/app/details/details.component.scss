@@ -1,0 +1,28 @@
+@import "../shared/colors";
+
+h2{
+    font-size:x-large;
+    color: $primary;
+}
+h3{
+    color: $accent;
+}
+.container{
+    flex-basis: 50%;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.funFact{
+    text-decoration: underline;
+    color: $warn;
+}
+
+.img{
+    vertical-align: middle;
+    margin: auto;
+}
+.centerBlock{
+    display: block;
+    margin: auto;
+}

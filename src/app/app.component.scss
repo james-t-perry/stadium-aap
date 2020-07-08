@@ -1,4 +1,5 @@
-$primary: rgb(43, 129, 67);
+@import "./shared/colors";
+
 $secondary: rgba(150,87,60,0.8),;
 
 
@@ -10,4 +11,12 @@ $secondary: rgba(150,87,60,0.8),;
   color: $primary;
   background-color:$secondary;
 }
+.menuButtons{
+  color: blue;
+}
 
+
+// .main-background{
+//   background-color: rgba(150,87,60,0.4);
+
+// }

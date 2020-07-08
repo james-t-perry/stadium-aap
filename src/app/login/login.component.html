@@ -2,22 +2,28 @@
 <h4 class="text-center">Please login:</h4>
 
 <div style="width: 60%; margin: auto;">
-<form class="login-form" (ngSubmit)="login()" [formGroup]="loginForm">
-<mat-form-field style="display: block;" appearance="fill">
-    <mat-label>Username</mat-label>
-        <!-- <label for="username">Username</label> -->
-    <input matInput formControlName="username" id="username" placeholder="Username">
+    <form class="login-form" (ngSubmit)="login($event)" [formGroup]="loginForm">
+        <mat-form-field style="display: block;" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" id="username" placeholder="Username">
+        </mat-form-field>
 
-</mat-form-field>
+        <mat-form-field style="display: block;" appearance="fill">
+            <mat-label>Password</mat-label>
+           <input matInput formControlName="password" type="password" id="password" placeholder="Password">
+        </mat-form-field>
 
-<mat-form-field style="display: block;" appearance="fill">
-    <mat-label>Password</mat-label>
-    <!-- <label for="password">Password</label> -->
-    <input matInput formControlName="password" type="password" id="password" placeholder="Password" >
+        <mat-form-field style="display: block;" appearance="fill">
+            <mat-label>Email</mat-label>
+           <input matInput formControlName="email" type="email" id="email" placeholder="Email">
+        </mat-form-field>
 
-</mat-form-field>
+        <mat-form-field style="display: block;" appearance="fill">
+            <mat-label>Favorite Team</mat-label>
+            <input matInput formControlName="favTeam" id="favTeam" placeholder="Favorite Team">
+        </mat-form-field>
 
-<button style="display: block; margin: auto;" mat-raised-button color="primary" (click)='login()' >Submit</button>
-</form>
+        <button style="display: block; margin: auto;" mat-raised-button color="primary">Submit</button>
+    </form>
 </div>
 <!-- <app-display></app-display> -->

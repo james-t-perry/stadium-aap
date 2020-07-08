@@ -25,8 +25,13 @@ export class StadiumStoreService {
 
 
   setStadiums(stadiums: Stadium[]): void{
+    console.log(stadiums);
     this.stadiums = [...this.stadiums,...stadiums]
     
+  }
+
+  clearStadiums() :void {
+    this.stadiums = []
   }
 
   byObjectId(OBJECTID:Number){

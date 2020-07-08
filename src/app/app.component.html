@@ -1,16 +1,22 @@
+
 <mat-toolbar class="bg-primary" >
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button routerLink="/home">
     <mat-icon>sports_baseball</mat-icon>
   </button>
   <span>Stadium Info</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button >
+  <button mat-icon-button [routerLink]="'/user/'+(user)" >
     <mat-icon>person</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button *ngIf="!user" routerLink="/login" routerLinkActive="active" mat-icon-button >
+    <mat-icon>login</mat-icon>
+  </button>
+  <button *ngIf="user" (click)="logout()" mat-icon-button>
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
 
+<div [@routeAnimations]="prepareRoute(outlet)">
+<router-outlet #outlet='outlet'></router-outlet>
+</div>

@@ -1,6 +1,27 @@
-<p>details works!</p>
+<div style="display: flex;">
+    <div class="text-center container">
+        <h2>{{stadium?.TEAM | titlecase}} </h2>
+        <h3>Capacity: {{stadium?.USE_POP | number}} </h3>
+        <h3>League: {{stadium?.LEAGUE | titlecase}}</h3>
+        <h3>Division: {{stadium?.DIVISION | titlecase}} </h3>
+        <ng-container *ngIf="stadium?.COMMENTS != 'NOT AVAILABLE'">
+            <h4 class="funFact">Fun Fact: {{stadium?.COMMENTS | titlecase}} </h4>
+        </ng-container>
+        <div> Visit the stadium website?
+            <a [href]="stadium?.USEWEBSITE+'/ballpark'" target="_blank">
+                <h4>{{stadium?.USEWEBSITE}} </h4>
+            </a>
+        </div>
 
-<h2>{{stadium?.TEAM}} </h2>
-<h3>{{stadium?.USE_POP}} </h3>
 
-<a href="../login/">RETURN TO ALL</a>
+
+    </div>
+
+    <div class="container img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7VhikIzngcihnFoQ8JRmY6GlreZUKXmQMEg&usqp=CAU">
+    </div>
+</div>
+
+
+<button class="centerBlock" mat-raised-button color="primary" routerLink="/home">Return To All
+    Stadiums</button>
